@@ -21,7 +21,7 @@ h1 {
     font-size: 24px;
     display: inline;
 }
-
+}
 
 h2 {
     font-size: 36px;
@@ -90,27 +90,6 @@ button {
     background-color: #f8d7da;
 }
 
-table#employee_list th {
-    width: 30%;
-    padding: 10px 2%;
-}
-
-table#employee_list td {
-    width: 29%;
-    padding: 10px 2%;
-}
-
-tr.row1 {
-        background-color: #f2f2f2;
-}
-tr.row0 {
-        background-color: #ffffff;
-}
-
-select {
-    height: 30px;
-}
-
 #header_menu {
     width: 57%;
     padding-top: 17px;
@@ -132,6 +111,10 @@ select {
 
 h1 a {
     color: #eeeeee;
+}
+
+select {
+    height: 30px;
 }
 
 table#report_list th {

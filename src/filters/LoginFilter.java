@@ -69,12 +69,10 @@ public class LoginFilter implements Filter {
                     return;
                 }
             }
-
+        }
 
         chain.doFilter(request, response);
-        }
     }
-
 
     /**
      * @see Filter#init(FilterConfig)
