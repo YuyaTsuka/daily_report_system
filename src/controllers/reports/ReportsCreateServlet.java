@@ -3,6 +3,7 @@ package controllers.reports;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -51,13 +52,31 @@ public class ReportsCreateServlet extends HttpServlet {
                 report_date = Date.valueOf(request.getParameter("report_date"));
             }
             r.setReport_date(report_date);
-
             r.setTitle(request.getParameter("title"));
             r.setContent(request.getParameter("content"));
+
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             r.setCreated_at(currentTime);
             r.setupdated_at(currentTime);
+
+            Timestamp at = new Timestamp(System.currentTimeMillis());
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+            String attendance_at = sdf.format(at);
+            if(attendance_at != null && !attendance_at.equals("")) {
+
+                at = Timestamp.valueOf(request.getParameter("attendance_at"));
+            }
+            r.setAttendance_at(at);
+
+            Timestamp lv = new Timestamp(System.currentTimeMillis());
+            SimpleDateFormat sd = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+            String leaving_at = sd.format(lv);
+            if(leaving_at != null && !leaving_at.equals("")) {
+
+                lv =Timestamp.valueOf(request.getParameter("leaving_at"));
+            }
+            r.setLeaving_at(lv);
 
             List<String> errors = ReportValidator.validate(r);
             if(errors.size() > 0) {

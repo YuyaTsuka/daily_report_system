@@ -15,6 +15,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+
 @Table(name="reports")
 @NamedQueries({
     @NamedQuery(
@@ -60,6 +61,12 @@ private Timestamp created_at;
 
 @Column(name = "updated_at", nullable = false)
 private Timestamp updated_at;
+
+@Column(name = "attendance_at", nullable = false)
+private Timestamp attendance_at;
+
+@Column(name = "leaving_at", nullable = false)
+private Timestamp leaving_at;
 
 public Integer getId() {
     return id;
@@ -116,4 +123,21 @@ public Timestamp getUpdated_at() {
 public void setupdated_at(Timestamp updated_at) {
     this.updated_at = updated_at;
 }
+
+public Timestamp getAttendance_at() {
+    return attendance_at;
+}
+
+public void setAttendance_at(Timestamp attendance_at) {
+    this.attendance_at = attendance_at;
+}
+
+public Timestamp getLeaving_at() {
+    return leaving_at;
+}
+
+public void setLeaving_at(Timestamp leaving_at) {
+    this.leaving_at = leaving_at;
+}
+
 }

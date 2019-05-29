@@ -22,9 +22,16 @@
 <input type="text" name="title" value="${report.title}" />
 <br /><br />
 
-
 <label for="content">内容</label><br />
 <textarea name="content" rows="10" cols="50">${report.content}</textarea>
+<br /><br />
+
+<label for="at">出勤</label><br />
+<input type="datetime" name="attendance_at" value="<fmt:formatDate value='${report.attendance_at}' pattern='yyyy-mm-dd hh:mm:ss' />" />
+<br /><br />
+
+<label for="at">退勤</label><br />
+<input type="datetime" name="leaving_at" value="<fmt:formatDate value='${report.leaving_at}' pattern='yyyy-mm-dd hh:mm:ss' />" />
 <br /><br />
 
 <input type="hidden" name="_token" value="${_token}" />
